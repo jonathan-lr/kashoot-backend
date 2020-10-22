@@ -1,0 +1,31 @@
+{
+  "name": "social-api",
+  "version": "1.0.1",
+  "description": "testing lambda serverless",
+  "main": "index.js",
+  "scripts": {
+    "start": "node local.js",
+    "deploy": "serverless deploy",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "error": "^10.4.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "jade": "^1.11.0",
+    "jest": "^26.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "express-jwt": "^6.0.0",
+    "serverless": "^1.50.1"
+  }
+}
