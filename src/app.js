@@ -236,6 +236,13 @@ io.on('connection', function(socket){
          score.sort((a, b) => b.score - a.score);
       }
 
+      if (answered === score.length) {
+         console.log(answer, score.length)
+         io.emit('next', {score})
+         question += 1;
+         answered = 0;
+      }
+
    })
 });
 
