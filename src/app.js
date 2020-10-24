@@ -22,140 +22,11 @@ var questions = [
       type: 1,
    },
    {
-      question: 'By What Name Do The Dragons Refer To The Dragonborn?',
-      answers: ['Dragonborn', 'Fafnir', 'Beowulf', 'Dovahkiin'],
-      correct: [4],
-      trick: [1],
+      question: 'Trick Question',
+      answers: ['Winterhold', 'Riften', 'Whiterun', 'Riften'],
+      correct: [5],
+      trick: [1,2,3,4],
       type: 1,
-   },
-   {
-      question: 'Which Order Of Monks Lives On The Peak Of Skyrim\'s Tallest Mountain?',
-      answers: ['Greybeards', 'Dark Brotherhood', 'Mythic Dawn', 'Rain Disciples'],
-      correct: [1],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Which Craftable Set Of Armour Provides The Most Defence?',
-      answers: ['Dragonplate', 'Ebony', 'Daedric', 'Orcish'],
-      correct: [3],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'What Curse Is The Inner Circle Of The Companion\'s Guild Afflicted With?',
-      answers: ['Vampirism', 'Lycanthropy', 'Gigantism', 'Zombification'],
-      correct: [2],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'The Falmer Are Feral Descendants Of Which Advanced Race?',
-      answers: ['Dwemer', 'Snow Elves', 'Ayleid', 'Chimer'],
-      correct: [2],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Which Two Belligerents Participated In Skyrim\'s Civil War?',
-      answers: ['Akiviri and Kamal', 'Daedra and Aedra', 'Stormcloaks and Imperials', 'Aldmeri Dominion and Greybeards'],
-      correct: [3],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Which Horse Does Astrid Gift You Upon Joining The Dark Brotherhood?',
-      answers: ['Roach', 'Epona', 'Shadowmere', 'Rapidash'],
-      correct: [3],
-      trick: [1,2,4],
-      type: 1,
-   },
-   {
-      question: 'What Are The Draugr?',
-      answers: ['Reanimated ancestors of the Dragonborn', 'Corpses possessed by dark magic', 'Victims of hideous experiments', 'Undead Nordic warriors'],
-      correct: [4],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Who Is Leader Of The Stormcloaks?',
-      answers: ['Balgruuf', 'Skald', 'Ulfric', 'Vignar Gray-Mane'],
-      correct: [3],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'What Title Is Given To Rulers Of Skyrim\'s Nine Holds?',
-      answers: ['Chancellor', 'Jarl', 'Earl', 'Viscount'],
-      correct: [3],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Which Prehistoric Animal Is Frequently Seen Accompanying Giants?',
-      answers: ['Mammoth', 'Dire wolf', 'Saber-toothed cat', 'Auroch'],
-      correct: [1],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Which Dragon Was Alduin\'s Lieutenant During The Dragon War?',
-      answers: ['Odahviing', 'Nahagliiv', 'Durnehviir', 'Paarthunax'],
-      correct: [4],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Complete the quote "You see those warriors from Hammerfell?"',
-      answers: ['...they\'ve got curved swords. Curved. Swords.', '...with a belly full of mead.', '...lollygaggin\'', '...bad feeling about this'],
-      correct: [1],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Complete the quote "Sorry lass, I\'ve got important things to do."',
-      answers: ['Well, not her. Her corpse. She\'s quite dead.', 'Guard duty.', 'We\'ll speak another time.', 'Let me get some mead!'],
-      correct: [3],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Complete the quote "This is the part where"',
-      answers: ['...somebody stole your sweet roll.', '...you fall down and bleed to death!', '...you call me Sheogorath, Daedric Prince of Madness.', '...I stab you in the back.'],
-      correct: [2],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Complete the quote "I used to be an adventurer like you"',
-      answers: ['...then I took an arrow to the knee', '...rug, cat', '...in these parts for years', '...and I just dont know it yet'],
-      correct: [1],
-      trick: [2,3,4],
-      type: 1,
-   },
-   {
-      question: 'What town/city is this?',
-      img: 'https://i.imgur.com/43j7aKZ.png',
-      answers: ['Dawnstar', 'Riften', 'Markarth', 'Falkreath'],
-      correct: [1],
-      trick: [0],
-      type: 2,
-   },
-   {
-      question: 'What town/city is this?',
-      img: 'https://i.imgur.com/FHOWmz6.png',
-      answers: ['Solitude', 'Helgen', 'Morthal', 'Riverwood'],
-      correct: [3],
-      trick: [0],
-      type: 2,
-   },
-   {
-      question: 'What town/city is this?',
-      img: 'https://i.imgur.com/UxYHQmf.png',
-      answers: ['Whiterun', 'Winterhold', 'Windstad', 'Windhelm'],
-      correct: [1],
-      trick: [3],
-      type: 2,
    },
    {
       question: 'What town/city is this?',
@@ -222,18 +93,35 @@ io.on('connection', function(socket){
    socket.on('answer', ({name, answer}) => {
       console.log(name, "answered", answer)
       answered += 1
-      if (questions[question].correct.includes(answer)) {
-         let temp = name
-         let user = score.find( ({ name }) => name === temp )
-         user.score += 1;
-         mergeArrayWithObject(score, user)
-         score.sort((a, b) => b.score - a.score);
-      } else if (questions[question].trick.includes(answer)) {
-         let temp = name
-         let user = score.find( ({ name }) => name === temp )
-         user.score -= 1;
-         mergeArrayWithObject(score, user)
-         score.sort((a, b) => b.score - a.score);
+      if (answer === 5) {
+         if (questions[question].correct.includes(answer)) {
+            let temp = name
+            let user = score.find( ({ name }) => name === temp )
+            user.score += 5;
+            mergeArrayWithObject(score, user)
+            score.sort((a, b) => b.score - a.score);
+         } else {
+            let temp = name
+            let user = score.find( ({ name }) => name === temp )
+            user.score -= 5;
+            mergeArrayWithObject(score, user)
+            score.sort((a, b) => b.score - a.score);
+            console.log("tricked")
+         }
+      } else {
+         if (questions[question].correct.includes(answer)) {
+            let temp = name
+            let user = score.find( ({ name }) => name === temp )
+            user.score += 1;
+            mergeArrayWithObject(score, user)
+            score.sort((a, b) => b.score - a.score);
+         } else if (questions[question].trick.includes(answer)) {
+            let temp = name
+            let user = score.find( ({ name }) => name === temp )
+            user.score -= 1;
+            mergeArrayWithObject(score, user)
+            score.sort((a, b) => b.score - a.score);
+         }
       }
 
       if (answered === score.length) {
