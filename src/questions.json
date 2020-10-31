@@ -1,0 +1,26 @@
+[
+  {
+    "question": "QUESTION TEXT",
+    "img": "IMG URL",
+    "answers": ["INCORRECT", "ANSWER", "INCORRECT", "ANSWER"],
+    "correct": [2,4],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "QUESTION TEXT",
+    "img": "",
+    "answers": ["MINUS POINTS", "INCORRECT", "ANSWER", "WRONG"],
+    "correct": [3],
+    "trick": [1],
+    "type": 1
+  },
+  {
+    "question": "TRICK QUESTION",
+    "img": "",
+    "answers": ["MINUS POINTS", "MINUS POINTS", "MINUS POINTS", "MINUS POINTS"],
+    "correct": [5],
+    "trick": [1,2,3,4],
+    "type": 1
+  }
+]

@@ -5,38 +5,18 @@ var path = require("path");
 var cors = require("cors");
 
 var testAPIRouter = require("./routes/testAPI");
+var quest = require("./questions.json");
 
 var app = express();
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
 
 var score = [];
+var users = [];
+var startRound = new Date();
 var question = 0;
 var answered = 0;
-var questions = [
-   {
-      question: 'In Which City Can The Mage\'s Guild Be Found?',
-      answers: ['Winterhold', 'Riften', 'Whiterun', 'Riften'],
-      correct: [1],
-      trick: [0],
-      type: 1,
-   },
-   {
-      question: 'Trick Question',
-      answers: ['Winterhold', 'Riften', 'Whiterun', 'Riften'],
-      correct: [5],
-      trick: [1,2,3,4],
-      type: 1,
-   },
-   {
-      question: 'What town/city is this?',
-      img: 'https://i.imgur.com/xoNnmxK.png',
-      answers: ['Whiterun', 'Winterhold', 'Windstad', 'Windhelm'],
-      correct: [4],
-      trick: [3],
-      type: 2,
-   },
-];
+var questions = quest
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -54,9 +34,16 @@ const mergeArrayWithObject = (arr, obj) => arr && arr.map(t => t.id === obj.id ?
 io.on('connection', function(socket){
    socket.on('join', ({name, room}) => {
       console.log(name, "joining", room)
-      io.emit('players', {name})
-      let temp = {name: name, score:0}
-      score.push(temp)
+      let temp1 = name
+      if (score.find( ({ name }) => name === temp1 )) {
+         socket.emit('taken')
+      } else {
+         io.emit('players', {name})
+         let temp = {name: name, score:0, correct:false}
+         let temp1 = {name: name, socket:socket}
+         score.push(temp)
+         users.push(temp1)
+      }
    })
 
    socket.on('host', () => {
@@ -68,6 +55,7 @@ io.on('connection', function(socket){
    })
 
    socket.on('start', () => {
+      startRound = new Date();
       try {
          var q = questions[question].question;
          if (questions[question].type === 2) {
@@ -90,39 +78,44 @@ io.on('connection', function(socket){
       answered = 0;
    })
 
+   socket.on('kicks', ({name}) => {
+      let temp2 = name
+      let user2 = users.find( ({ name }) => name === temp2 )
+      user2.socket.emit('kick')
+      var removeIndex = score.map(item => item.name).indexOf(name);
+      ~removeIndex && score.splice(removeIndex, 1);
+   })
+
    socket.on('answer', ({name, answer}) => {
       console.log(name, "answered", answer)
-      answered += 1
+      let endRound = new Date();
+      let seconds = Math.round((endRound - startRound) / 1000)
+      let scoreMultiplier = Math.round(((45-seconds) / 45) * 1000)
+      let temp = name
+      let user = score.find( ({ name }) => name === temp )
+      user.correct = false;
+
       if (answer === 5) {
          if (questions[question].correct.includes(answer)) {
-            let temp = name
-            let user = score.find( ({ name }) => name === temp )
-            user.score += 5;
-            mergeArrayWithObject(score, user)
-            score.sort((a, b) => b.score - a.score);
+            user.score += 5*scoreMultiplier;
+            user.correct = true;
          } else {
-            let temp = name
-            let user = score.find( ({ name }) => name === temp )
-            user.score -= 5;
-            mergeArrayWithObject(score, user)
-            score.sort((a, b) => b.score - a.score);
-            console.log("tricked")
+            user.score -= 5*scoreMultiplier;
+            user.correct = false;
          }
       } else {
          if (questions[question].correct.includes(answer)) {
-            let temp = name
-            let user = score.find( ({ name }) => name === temp )
-            user.score += 1;
-            mergeArrayWithObject(score, user)
-            score.sort((a, b) => b.score - a.score);
+            user.score += 1*scoreMultiplier;
+            user.correct = true;
          } else if (questions[question].trick.includes(answer)) {
-            let temp = name
-            let user = score.find( ({ name }) => name === temp )
-            user.score -= 1;
-            mergeArrayWithObject(score, user)
-            score.sort((a, b) => b.score - a.score);
+            user.score -= 1*scoreMultiplier;
+            user.correct = false;
          }
       }
+
+      mergeArrayWithObject(score, user)
+      score.sort((a, b) => b.score - a.score);
+      answered += 1
 
       if (answered === score.length) {
          console.log(answer, score.length)
@@ -130,7 +123,6 @@ io.on('connection', function(socket){
          question += 1;
          answered = 0;
       }
-
    })
 });
 
