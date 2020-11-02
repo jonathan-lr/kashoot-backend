@@ -11,11 +11,8 @@ var app = express();
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
 
-var score = [];
+var game = [];
 var users = [];
-var startRound = new Date();
-var question = 0;
-var answered = 0;
 var questions = quest
 
 // view engine setup
@@ -34,14 +31,17 @@ const mergeArrayWithObject = (arr, obj) => arr && arr.map(t => t.id === obj.id ?
 io.on('connection', function(socket){
    socket.on('join', ({name, room}) => {
       console.log(name, "joining", room)
-      let temp1 = name
-      if (score.find( ({ name }) => name === temp1 )) {
+      let temp1 = room
+      let lobby = game.find( ({ room }) => room == temp1 )
+      let temp = name
+      if (lobby.score.find( ({ name }) => name === temp )) {
          socket.emit('taken')
       } else {
-         io.emit('players', {name})
+         socket.join(room)
+         io.to(room).emit('players', {name})
          let temp = {name: name, score:0, correct:false}
-         let temp1 = {name: name, socket:socket}
-         score.push(temp)
+         let temp1 = {name: name, socket:socket, room: room}
+         lobby.score.push(temp)
          users.push(temp1)
       }
    })
@@ -49,33 +49,40 @@ io.on('connection', function(socket){
    socket.on('host', () => {
       var room = Math.floor((Math.random() * 9999) + 1);
       console.log('Host Session Started', room)
-      io.emit('host', {room})
-      score = []
-      question = 0
+      socket.join(room)
+      io.to(room).emit('host', {room})
+      let temp = {room: room, score: [], question:0, answered:0, startRound: new Date() }
+      game.push(temp)
    })
 
    socket.on('start', () => {
-      startRound = new Date();
+      let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
+      let room = game.find( ({ room }) => room == currentRoom )
+      room.startRound = new Date();
       try {
-         var q = questions[question].question;
-         if (questions[question].type === 2) {
-            var i = questions[question].img
+         var q = questions[room.question].question;
+         if (questions[room.question].type === 2) {
+            var i = questions[room.question].img
          } else {
             var i = ''
          }
-         var a = questions[question].answers;
-         var t = questions[question].type;
-         io.emit('hoster', {q, a, t, i});
-         io.emit('player', {q});
+         var a = questions[room.question].answers;
+         var t = questions[room.question].type;
+         io.to(currentRoom).emit('hoster', {q, a, t, i});
+         io.to(currentRoom).emit('player', {q});
       } catch (e) {
-         io.emit('finished', {score});
+         let score = room.score
+         io.to(currentRoom).emit('finished', {score});
       }
    })
 
    socket.on('next', () => {
-      io.emit('next', {score})
-      question += 1;
-      answered = 0;
+      let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
+      let room = game.find( ({ room }) => room == currentRoom )
+      let score = room.score
+      io.to(currentRoom).emit('next', {score})
+      room.question += 1;
+      room.answered = 0;
    })
 
    socket.on('kicks', ({name}) => {
@@ -88,15 +95,17 @@ io.on('connection', function(socket){
 
    socket.on('answer', ({name, answer}) => {
       console.log(name, "answered", answer)
+      let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
+      let room = game.find( ({ room }) => room == currentRoom )
       let endRound = new Date();
-      let seconds = Math.round((endRound - startRound) / 1000)
+      let seconds = Math.round((endRound - room.startRound) / 1000)
       let scoreMultiplier = Math.round(((45-seconds) / 45) * 1000)
       let temp = name
-      let user = score.find( ({ name }) => name === temp )
+      let user = room.score.find( ({ name }) => name === temp )
       user.correct = false;
 
       if (answer === 5) {
-         if (questions[question].correct.includes(answer)) {
+         if (questions[room.question].correct.includes(answer)) {
             user.score += 5*scoreMultiplier;
             user.correct = true;
          } else {
@@ -104,24 +113,24 @@ io.on('connection', function(socket){
             user.correct = false;
          }
       } else {
-         if (questions[question].correct.includes(answer)) {
+         if (questions[room.question].correct.includes(answer)) {
             user.score += 1*scoreMultiplier;
             user.correct = true;
-         } else if (questions[question].trick.includes(answer)) {
+         } else if (questions[room.question].trick.includes(answer)) {
             user.score -= 1*scoreMultiplier;
             user.correct = false;
          }
       }
 
-      mergeArrayWithObject(score, user)
-      score.sort((a, b) => b.score - a.score);
-      answered += 1
+      mergeArrayWithObject(room.score, user)
+      room.score.sort((a, b) => b.score - a.score);
+      room.answered += 1
 
-      if (answered === score.length) {
-         console.log(answer, score.length)
-         io.emit('next', {score})
-         question += 1;
-         answered = 0;
+      if (room.answered === room.score.length) {
+         let score = room.score
+         io.to(currentRoom).emit('next', {score})
+         room.question += 1;
+         room.answered = 0;
       }
    })
 });
