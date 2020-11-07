@@ -1,0 +1,178 @@
+[
+  {
+    "question": "Hot Dog",
+    "img": "https://i.imgur.com/T9ngXXp.jpg",
+    "answers": ["United States", "Austria", "Germany", "Scotland"],
+    "correct": [1],
+    "trick": [3],
+    "type": 2
+  },
+  {
+    "question": "Full Breakfast",
+    "img": "https://i.imgur.com/RzsekrI.png",
+    "answers": ["Ireland", "United Kingdom", "France", "Australia"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Sushi",
+    "img": "https://i.imgur.com/TGZd1kJ.png",
+    "answers": ["Malaysian", "Korea", "China", "Thailand"],
+    "correct": [5],
+    "trick": [1,2,3,4],
+    "type": 2
+  },
+  {
+    "question": "Pizza",
+    "img": "https://i.imgur.com/zZYllHp.png",
+    "answers": ["Canada", "Italy", "United States", "Croatia"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Pho",
+    "img": "https://i.imgur.com/wdIf5sk.png",
+    "answers": ["Vietnam", "Laos", "Myanmar", "Cambodia"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Poke",
+    "img": "https://i.imgur.com/T3zzzrL.jpg",
+    "answers": ["Fiji", "Hawaii", "New Zealand", "Indonesia"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Szechuan Chili Chicken",
+    "img": "https://i.imgur.com/KQGWwDn.jpg",
+    "answers": ["China", "Hong Kong", "Singapore", "Taiwan"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Chilaquiles",
+    "img": "https://i.imgur.com/OCOfFBv.png",
+    "answers": ["Spain", "Dominican Republic", "Argentina", "Mexico"],
+    "correct": [4],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Gazpacho",
+    "img": "https://i.imgur.com/KAgd1wU.png",
+    "answers": ["Spain", "Argentina", "Mexico", "Dominican Republic"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Chimichurri",
+    "img": "https://i.imgur.com/90pClMY.png",
+    "answers": ["Dominican Republic", "Mexico", "Argentina", "Spain"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Tostones",
+    "img": "https://i.imgur.com/vaJ4rGt.png",
+    "answers": ["Spain", "Dominican Republic", "Argentina", "Mexico"],
+    "correct": [5],
+    "trick": [1,3,4],
+    "type": 2
+  },
+  {
+    "question": "Smørrebrød",
+    "img": "https://i.imgur.com/DGRyTBL.jpg",
+    "answers": ["Denmark", "Sweden", "Norway", "Finland"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Leipajuusto",
+    "img": "https://i.imgur.com/nMNyKx4.png",
+    "answers": ["Norway", "Denmark", "Sweden", "Finland"],
+    "correct": [4],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Kroppkakor",
+    "img": "https://i.imgur.com/pkMtBjB.png",
+    "answers": ["Sweden", "Denmark", "Finland", "Norway"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Lutefisk",
+    "img": "https://i.imgur.com/1bXGGi4.png",
+    "answers": ["Finland", "Norway", "Sweden", "Denmark"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Hāngī",
+    "img": "https://i.imgur.com/Zq4qIUh.png",
+    "answers": ["Fiji", "Japan", "New Zealand", "Hawaii"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "All Wong Answers From Now On Will Give Minus | Fish & Chips",
+    "img": "https://i.imgur.com/USVIMqZ.jpg",
+    "answers": ["Ireland", "Scotland", "Wales", "England"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 2
+  },
+  {
+    "question": "Hamburger",
+    "img": "https://i.imgur.com/eVOJznp.png",
+    "answers": ["United States", "United Kingdom", "Germany", "AUSTRALIA"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2
+  },
+  {
+    "question": "Tacos",
+    "img": "https://i.imgur.com/8bEl5Z7.png",
+    "answers": ["Spain", "Mexico", "Argentina", "Taco Bell"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 2
+  },
+  {
+    "question": "Poutine",
+    "img": "https://i.imgur.com/Jqvqapd.png",
+    "answers": ["Belgium", "France", "Canada", "Luxembourg"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 2
+  },
+  {
+    "question": "Crepe",
+    "img": "https://i.imgur.com/A0WfB9x.png",
+    "answers": ["United States", "Belgium", "United Kingdom", "France"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 2
+  },
+  {
+    "question": "Milkshak",
+    "img": "https://i.imgur.com/BJlfNwY.png",
+    "answers": ["United States", "United Kingdom", "France", "Canada"],
+    "correct": [5],
+    "trick": [2,3,4],
+    "type": 2
+  }
+]

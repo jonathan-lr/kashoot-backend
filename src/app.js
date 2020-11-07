@@ -5,7 +5,7 @@ var path = require("path");
 var cors = require("cors");
 
 var testAPIRouter = require("./routes/testAPI");
-var quest = require("./questions.json");
+var quest = require("./quesitons/food.json");
 
 var app = express();
 var http = require("http").createServer(app);
@@ -34,15 +34,19 @@ io.on('connection', function(socket){
       let temp1 = room
       let lobby = game.find( ({ room }) => room == temp1 )
       let temp = name
-      if (lobby.score.find( ({ name }) => name === temp )) {
-         socket.emit('taken')
-      } else {
-         socket.join(room)
-         io.to(room).emit('players', {name})
-         let temp = {name: name, score:0, correct:false}
-         let temp1 = {name: name, socket:socket, room: room}
-         lobby.score.push(temp)
-         users.push(temp1)
+      try {
+         if (lobby.score.find( ({ name }) => name === temp )) {
+            socket.emit('taken')
+         } else {
+            socket.join(room)
+            io.to(room).emit('players', {name})
+            let temp = {name: name, score:0, correct:false}
+            let temp1 = {name: name, socket:socket, room: room}
+            lobby.score.push(temp)
+            users.push(temp1)
+         }
+      } catch (e) {
+         socket.emit('room')
       }
    })
 
@@ -86,11 +90,13 @@ io.on('connection', function(socket){
    })
 
    socket.on('kicks', ({name}) => {
+      let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
+      let room = game.find( ({ room }) => room == currentRoom )
       let temp2 = name
       let user2 = users.find( ({ name }) => name === temp2 )
       user2.socket.emit('kick')
-      var removeIndex = score.map(item => item.name).indexOf(name);
-      ~removeIndex && score.splice(removeIndex, 1);
+      var removeIndex = room.score.map(item => item.name).indexOf(name);
+      ~removeIndex && room.score.splice(removeIndex, 1);
    })
 
    socket.on('answer', ({name, answer}) => {
