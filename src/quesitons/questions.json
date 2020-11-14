@@ -1,7 +1,7 @@
 [
   {
     "question": "QUESTION TEXT",
-    "img": "IMG URL",
+    "img": "https://i.imgur.com/LQNNRck.png",
     "answers": ["INCORRECT", "ANSWER", "INCORRECT", "ANSWER"],
     "correct": [2,4],
     "trick": [0],

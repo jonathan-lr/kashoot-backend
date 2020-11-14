@@ -5,7 +5,7 @@ var path = require("path");
 var cors = require("cors");
 
 var testAPIRouter = require("./routes/testAPI");
-var quest = require("./quesitons/food.json");
+var quest = require("./quesitons/warcrimes.json");
 
 var app = express();
 var http = require("http").createServer(app);
@@ -36,17 +36,30 @@ io.on('connection', function(socket){
       let temp = name
       try {
          if (lobby.score.find( ({ name }) => name === temp )) {
-            socket.emit('taken')
+            let message = "Name Taken"
+            socket.emit('issue', {message})
          } else {
             socket.join(room)
             io.to(room).emit('players', {name})
-            let temp = {name: name, score:0, correct:false}
-            let temp1 = {name: name, socket:socket, room: room}
-            lobby.score.push(temp)
-            users.push(temp1)
+            lobby.score.push({name: name, score:0, correct:0})
+            users.push({name: name, socket:socket, room: room})
          }
       } catch (e) {
-         socket.emit('room')
+         let message = "Room Does Not Exist"
+         socket.emit('issue', {message})
+      }
+   })
+
+   socket.on('rejoin', ({name, room}) => {
+      try {
+         console.log(name, 'Reconnected')
+         socket.join(room)
+         let temp = name
+         let user = users.find(({name}) => name === temp)
+         user.socket = socket
+      } catch (e) {
+         let message = "Issue Reconnecting to Game"
+         socket.emit('issue', {message})
       }
    })
 
@@ -55,7 +68,7 @@ io.on('connection', function(socket){
       console.log('Host Session Started', room)
       socket.join(room)
       io.to(room).emit('host', {room})
-      let temp = {room: room, score: [], question:0, answered:0, startRound: new Date() }
+      let temp = {room: room, score: [], question:0, answered:0, startRound: new Date(), lastAnswer:0 }
       game.push(temp)
    })
 
@@ -80,21 +93,30 @@ io.on('connection', function(socket){
       }
    })
 
+   socket.on('closed', () => {
+      let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
+      let message = "Game Closed"
+      io.to(currentRoom).emit('issue', {message})
+   })
+
    socket.on('next', () => {
       let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
       let room = game.find( ({ room }) => room == currentRoom )
       let score = room.score
-      io.to(currentRoom).emit('next', {score})
+      let last = room.lastAnswer
+      io.to(currentRoom).emit('next', {score, last})
       room.question += 1;
       room.answered = 0;
    })
 
    socket.on('kicks', ({name}) => {
+      console.log("Attempting to kick ", name)
       let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
       let room = game.find( ({ room }) => room == currentRoom )
       let temp2 = name
       let user2 = users.find( ({ name }) => name === temp2 )
-      user2.socket.emit('kick')
+      let message = "You have been kicked"
+      user2.socket.emit('issue', {message})
       var removeIndex = room.score.map(item => item.name).indexOf(name);
       ~removeIndex && room.score.splice(removeIndex, 1);
    })
@@ -104,27 +126,31 @@ io.on('connection', function(socket){
       let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
       let room = game.find( ({ room }) => room == currentRoom )
       let endRound = new Date();
-      let seconds = Math.round((endRound - room.startRound) / 1000)
-      let scoreMultiplier = Math.round(((45-seconds) / 45) * 1000)
+      let seconds = 0
+      let scoreMultiplier = 0
+      try {
+         seconds = Math.round((endRound - room.startRound) / 1000)
+         scoreMultiplier = Math.round(((45-seconds) / 45) * 1000)
+      } catch (e) {
+         scoreMultiplier = 1000
+      }
+
       let temp = name
       let user = room.score.find( ({ name }) => name === temp )
-      user.correct = false;
+      user.correct = answer;
+      room.lastAnswer = questions[room.question]
 
       if (answer === 5) {
          if (questions[room.question].correct.includes(answer)) {
             user.score += 5*scoreMultiplier;
-            user.correct = true;
          } else {
             user.score -= 5*scoreMultiplier;
-            user.correct = false;
          }
       } else {
          if (questions[room.question].correct.includes(answer)) {
             user.score += 1*scoreMultiplier;
-            user.correct = true;
          } else if (questions[room.question].trick.includes(answer)) {
             user.score -= 1*scoreMultiplier;
-            user.correct = false;
          }
       }
 
@@ -134,7 +160,8 @@ io.on('connection', function(socket){
 
       if (room.answered === room.score.length) {
          let score = room.score
-         io.to(currentRoom).emit('next', {score})
+         let last = room.lastAnswer
+         io.to(currentRoom).emit('next', {score, last})
          room.question += 1;
          room.answered = 0;
       }

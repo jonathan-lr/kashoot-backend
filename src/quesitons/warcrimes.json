@@ -1,0 +1,138 @@
+[
+  {
+    "question": "Where is the International court for war crimes?",
+    "img": "IMG URL",
+    "answers": ["London", "The Hague", "Copenhagen", "Paris"],
+    "correct": [2],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "For how long have war crimes been enforced globally?",
+    "img": "",
+    "answers": ["112 Years", "20 Years", "71 Years", "69 Years"],
+    "correct": [3],
+    "trick": [4],
+    "type": 1
+  },
+  {
+    "question": "What is the deliberate act of killing of a large group of people?",
+    "img": "",
+    "answers": ["Genocide", "Gendercide", "Homicide", "Deicide"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "What is the deliberate act that causes human suffering or death on a large scale?",
+    "img": "",
+    "answers": ["Swise against humanity", "Crimes against humanity", "Cards against humanity", "War against humanity"],
+    "correct": [2],
+    "trick": [1],
+    "type": 1
+  },
+  {
+    "question": "How many people have the ITCY prosecuted?",
+    "img": "",
+    "answers": ["468 persons", "300 persons", "160 persons", "69 persons"],
+    "correct": [3],
+    "trick": [4],
+    "type": 1
+  },
+  {
+    "question": "What war crimes did Unit 731 commit?",
+    "img": "https://i.imgur.com/vlmmpCi.png",
+    "answers": ["Biological Warfare", "Weapon Testing on Human Targets", "Bamboo Torture", "Human Vivisection"],
+    "correct": [1,2,3],
+    "trick": [4],
+    "type": 2
+  },
+  {
+    "question": "The historical event Nanjing Massacre is mainly known for?",
+    "img": "",
+    "answers": ["Human Torture", "Human Vivisection", "Theft and Arson", "Mass Rape & Murder"],
+    "correct": [4],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "The contest to kill 100 people using a sword was between what 2 parties?",
+    "img": "",
+    "answers": ["Toshiaki Mukai & Tsuyoshi Noda", "George Marshall & Omar Bradley", "Terence Airey & Desmond Anderson", "Erich Raeder & Erwin Rommel"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "The Second Boer War fought by the British caused how manny to perish due to their Scorched Earth policy?",
+    "img": "https://i.imgur.com/N0yqCDJ.png",
+    "answers": ["26,000", "260,000", "2,600", "260"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Pacification of Libya resulting in over 225,000 people slaughtered was caused by what country?",
+    "img": "https://i.imgur.com/pe8iP7W.png",
+    "answers": ["Greece", "Italy", "Spain", "Turkey"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "What German Concentration camp is this?",
+    "img": "https://i.imgur.com/7b9xFMK.png",
+    "answers": ["Arbeitsdorf", "Bergen-Belsen", "Herzogenbusch", "Sachsenhausen"],
+    "correct": [5],
+    "trick": [1,2,3,4],
+    "type": 2
+  },
+  {
+    "question": "Bodo League massacre killing between 60k-200k was in what year?",
+    "img": "https://i.imgur.com/2Pb9IR7.png",
+    "answers": ["1950", "1951", "1952", "1953"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Palawan Massacre to prevent the rescue of prisoners which military burned them alive gunned down those that escaped?",
+    "img": "",
+    "answers": ["Kingdom of Italy", "Nazi Germany", "Imperial Japanese Army", "Kingdom of Hungary"],
+    "correct": [3],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "The Iași pogrom has the shortened name of what?",
+    "img": "https://i.imgur.com/weJFjrP.png",
+    "answers": ["Isai", "Ias", "Jassy", "Pog Champ"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "NKVD prisoner massacres killing approximately how many in the USSR?",
+    "img": "https://i.imgur.com/9WyX8G5.png",
+    "answers": ["50,000", "100,000", "150,000", "200,000"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "What happened in Treuenbrietzen after the Soviets captured the city?",
+    "img": "",
+    "answers": ["Mass Execution", "Chemical Weapons Testing", "Mass Rape", "Live Surgery"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "HMS Torbay incident was what?",
+    "img": "",
+    "answers": ["A submarine that destoryed ships", "A Ship that captured crews and hang them off the side", "A submarine that executed all ships lifeboats", "Death"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  }
+]
