@@ -5,7 +5,7 @@ var path = require("path");
 var cors = require("cors");
 
 var testAPIRouter = require("./routes/testAPI");
-var quest = require("./quesitons/warcrimes.json");
+var quest = require("./quesitons/got.json");
 
 var app = express();
 var http = require("http").createServer(app);
@@ -105,6 +105,10 @@ io.on('connection', function(socket){
       let score = room.score
       let last = room.lastAnswer
       io.to(currentRoom).emit('next', {score, last})
+      let i;
+      for (i = 0; i < score.length; i++) {
+         score[i].correct = 0;
+      }
       room.question += 1;
       room.answered = 0;
    })
@@ -162,6 +166,10 @@ io.on('connection', function(socket){
          let score = room.score
          let last = room.lastAnswer
          io.to(currentRoom).emit('next', {score, last})
+         let i;
+         for (i = 0; i < score.length; i++) {
+            score[i].correct = 0;
+         }
          room.question += 1;
          room.answered = 0;
       }

@@ -1,0 +1,194 @@
+[
+  {
+    "question": "Which Stark family members lost their lives in the massacre that was The Red Wedding in Season Three?",
+    "img": "https://i.imgur.com/SVT7aFM.png",
+    "answers": ["Steve Start", "Robb Stark", "Catelyn Stark", "Tony Stark"],
+    "correct": [2, 3],
+    "trick": [4],
+    "type": 2
+  },
+  {
+    "question": "How did Tyrion kill his father Tywin?",
+    "img": "https://i.imgur.com/T7X6yQ6.png",
+    "answers": ["With Joffrey’s crossbow", "With Jamie's crossbow", "With Sansa's crossbow", "With Tony's crossbow"],
+    "correct": [1],
+    "trick": [4],
+    "type": 2
+  },
+  {
+    "question": "Which character did The Mountain kill when he took on ‘the Viper’?",
+    "img": "https://i.imgur.com/yz6hyDR.png",
+    "answers": ["Viper", "The Mountain", "Oberyn Martell", "Gregor Clegane"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "What does Cersei blow up using wildfire",
+    "img": "https://i.imgur.com/YNUN6wf.png",
+    "answers": ["Kings Landing", "Aerion Targaryen's House", "Stannis Baratheon's Army", "The Great Sept of Baelor"],
+    "correct": [4],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "What does Daenerys eat in season 1 to cement her position as khaleesi of the Dothraki?",
+    "img": "https://i.imgur.com/fWHwcTG.png",
+    "answers": ["A fresh, raw horse heart", "A fresh, raw horse liver", "A fresh, raw human liver", "A fresh, raw human heart"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Which character betrayed Ned Stark, leading to his death",
+    "img": "https://i.imgur.com/fJzpeWx.png",
+    "answers": ["Varys", "Jamie Lanester", "Little Finger", "Cersei Lannister"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "How does Bran escape when the White Walkers attack the Three-Eyed Raven’s tree?",
+    "img": "https://i.imgur.com/C929rHQ.png",
+    "answers": ["Hodor holds the door", "The tree seals the passage", "The Three-Eyed raven stops them", "Wildfire"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Who throws Lysa Arryn out the Moon Door?",
+    "img": "https://i.imgur.com/JaRdIUF.png",
+    "answers": ["Robert Arryn", "Little Finger", "Catelyn Stark", "Bronn"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Whose last words were ‘It’s nothing’?",
+    "img": "https://i.imgur.com/kQq1S8c.png",
+    "answers": ["Joffrey Baratheon", "Stannis Baratheon", "Gendry Baratheon", "Robert Baratheon"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "How does Daenery’s dragon Rhaegal meet his end?",
+    "img": "https://i.imgur.com/AMK58fK.png",
+    "answers": ["John Snooeee", "The Night Kings Spear", "Euron Greyjoy’s giant crossbows", "Bronn being a legend"],
+    "correct": [3],
+    "trick": [1],
+    "type": 2
+  },
+  {
+    "question": "Which character kills the Night King?",
+    "img": "https://i.imgur.com/E6UAjCT.png",
+    "answers": ["Jamie Lancaster", "Arya Stark", "John Snow", "Sansa Stark"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Who Said it ‘There is only one thing we say to death, Not today’",
+    "img": "https://i.imgur.com/C4TZieV.png",
+    "answers": ["John Snow", "Jaqen H'ghar", "Robb Stark", "Syrio Forel"],
+    "correct": [4],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Who Said it ‘That’s what I do, I drink and I know things’",
+    "img": "https://i.imgur.com/hPMMJYL.png",
+    "answers": ["Kevan Lannister", "Tyrion Lannister", "Tywin Lannister", "Loren Lannister"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Who Said it ‘I don’t plan on knitting by the fire while men fight for me’",
+    "img": "https://i.imgur.com/HoRxExQ.png",
+    "answers": ["Lyanna Mormont", "Sansa Stark", "Arya Stark", "Margaery Tyrell"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Who Said it ‘The man who passes the sentence should swing the sword’",
+    "img": "https://i.imgur.com/xPtxm9s.png",
+    "answers": ["Ned Stark", "Stannis Baratheon", "Robert Baratheon", "Rob Stark"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Who Said it ‘Leave one wolf alive and the sheep are never safe.’",
+    "img": "https://i.imgur.com/QlEdui1.png",
+    "answers": ["Ned Stark", "Tony Stark", "Arya Stark", "Theon Greyjoy"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Who Said it ‘All men must die, but we are not men.’",
+    "img": "https://i.imgur.com/fldogjW.png",
+    "answers": ["Cersei Lannister", "Daenerys Targaryen", "Olenna Tyrell", "Sansa Stark"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "Who Said it ‘Tell Cersei. I want her to know it was me.’",
+    "img": "https://i.imgur.com/kLRtIoL.png",
+    "answers": ["Cersei Lannister", "Sansa Stark", "Olenna Tyrell", "Little Finger"],
+    "correct": [3],
+    "trick": [1],
+    "type": 2
+  },
+  {
+    "question": "Who Said it ‘When you play the game of thrones, you win or you die’",
+    "img": "https://i.imgur.com/IdPLaol.png",
+    "answers": ["Tyrion Lannister", "Cersei Lannister", "Daenerys Targaryen", "Bronn"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2
+  },
+  {
+    "question": "What’s the location where most scenes in the North below The Wall are filmed?",
+    "img": "https://i.imgur.com/PZ70sYi.png",
+    "answers": ["Belfast", "Manchester", "Newcastle", "Glasgow"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2
+  },
+  {
+    "question": "What number Lord Commander of the Night’s Watch was Jon Snow?",
+    "img": "https://i.imgur.com/wba6jUh.png",
+    "answers": ["999", "969", "1001", "998"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 2
+  },
+  {
+    "question": "What’s The Hound’s real name?",
+    "img": "https://i.imgur.com/xhUqoho.png",
+    "answers": ["Gregor Clegane", "Sandor Clegane", "Davor Clegane", "Steve Clegane"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 2
+  },
+  {
+    "question": "What is the only thing that can put out Wildfire?",
+    "img": "https://i.imgur.com/YNUN6wf.png",
+    "answers": ["Wildwater", "Sand", "Dragon Glass", "Magic Wood"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 2
+  },
+  {
+    "question": "What is Sansa Stark’s favorite treat?",
+    "img": "https://i.imgur.com/aYEyzHw.png",
+    "answers": ["Pork Pie", "Iced Milk with Honey", "Creamy Fish Stew", "Lemon Cakes"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 2
+  }
+]
