@@ -1,0 +1,202 @@
+[
+  {
+    "question": "1. How does Harry manage to breathe underwater during the second task of the Triwizard Tournament?",
+    "img": "",
+    "answers": ["He transfigures into a shark", "He kisses a mermaid", "He eats gillyweed", "He performs a bubble-head charm"],
+    "correct": [3],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "2. What is the name of Fred and George’s joke shop?",
+    "img": "",
+    "answers": ["Weasley Joke Emporium", "Weasleys’ Wizard Wheezes", "Fred & George’s Wonder Emporium", "Zonko’s Joke Shop"],
+    "correct": [2],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "3. Which of these is NOT one of the Unforgivable Curses?",
+    "img": "",
+    "answers": ["Cruciatus Curse", "Imperius Curse", "Sectumsempra", "Avada Kedavra"],
+    "correct": [3],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "4. Who played Lord Voldemort in the movies?",
+    "img": "",
+    "answers": ["Jeremy Irons", "Tom Hiddleston", "Gary Oldman", "Ralph Fiennes"],
+    "correct": [4],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "5. Who guards the entrance to the Gryffindor common room?",
+    "img": "",
+    "answers": ["The Grey Lady", "The Fat Friar", "The Bloody Baron", "The Fat Lady"],
+    "correct": [4],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "6. Who is NOT a member of the Order of the Phoenix?",
+    "img": "",
+    "answers": ["Cornelius Fudge", "Mad-eye Moody", "Professor Snape", "Remus Lupin"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "7. A wizard who cannot do magic is known as a:",
+    "img": "",
+    "answers": ["Bleaker", "Squib", "Duddle", "Wizont"],
+    "correct": [2],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "8. What does the spell “Obliviate” do?",
+    "img": "",
+    "answers": ["Destroys objects", "Sends someone to the nether realm", "Removes parts of someone’s memory", "Makes objects invisible"],
+    "correct": [3],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "9. Where does Hermione brew her first batch of Polyjuice Potion?",
+    "img": "",
+    "answers": ["Moaning Myrtle’s Bathroom", "The Hogwarts Kitchen", "The Room of Requirement", "The Gryffindor Common Room"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "10. What does one say to close the Marauder’s Map and make it blank again?",
+    "img": "",
+    "answers": ["Mischief Managed", "Nothing to See Here", "All Done", "Hello Professor"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "11. The three kinds of balls used in Quidditch are Bludgers, Snitches, and…",
+    "img": "",
+    "answers": ["Quaffles", "Wiffles", "Boccis", "Foozles"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "12. Who has been stealing Harry’s letters from Ron and Hermione at the beginning of ‘Harry Potter and the Chamber of Secrets’?",
+    "img": "",
+    "answers": ["Dumbledore", "Draco Malfoy", "Dobby", "The Dursleys"],
+    "correct": [3],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "13. How many Weasley siblings are there?",
+    "img": "",
+    "answers": ["5", "7", "10", "3"],
+    "correct": [2],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "14. Where do Harry and Ron eventually find the missing flying Ford Anglia?",
+    "img": "",
+    "answers": ["At the Ministry of Magic", "In the Forbidden Forest", "In the Room of Requirement", "Outside the Dursleys House"],
+    "correct": [2],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "15. From what King’s Cross platform does the Hogwarts Express leave?",
+    "img": "",
+    "answers": ["Eight and One-quarter", "Nine and Four-quarters", "Five and a Half", "Sixty Nine"],
+    "correct": [5],
+    "trick": [1,2,3,4],
+    "type": 1
+  },
+  {
+    "question": "16. What’s the name of Filch’s cat?",
+    "img": "",
+    "answers": ["Ser Pounce", "Buttercup", "Mrs. Norris", "Jones"],
+    "correct": [3],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "17. Which professor teaches flying lessons?",
+    "img": "",
+    "answers": ["Professor Grubbly-Plank", "Sybill Trelawney", "Charity Burbage", "Madam Hooch"],
+    "correct": [4],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "18. Which is NOT a form of currency in the wizarding world?",
+    "img": "",
+    "answers": ["Doxies", "Sickles", "Knuts", "Galleons"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "19. What does Hermione use to defeat the Devil’s Snare plant?",
+    "img": "",
+    "answers": ["Fire", "Expelliarmus!", "Wind", "A Reducto Charm"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "20. Who has given Harry Potter the Invisibility cloak?",
+    "img": "",
+    "answers": ["Dumbledore", "Mad-eye Moody", "Professor Snape", "Dobby"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 1
+  },
+  {
+    "question": "21. What is the model of the first broom Harry ever receives?",
+    "img": "",
+    "answers": ["Cleansweep One", "Nimbus 2000", "Hoover", "Firebolt"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 1
+  },
+  {
+    "question": "22. What does Mrs. Weasley give Harry for Christmas every year?",
+    "img": "",
+    "answers": ["Bertie Bott’s every flavour beans", "Chocolate frogs", "A fruit cake", "A new sweater"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 1
+  },
+  {
+    "question": "23. What are the names of Draco Malfoy’s two cronies?",
+    "img": "",
+    "answers": ["Huggs and Pucey", "Flint and Boyle", "Crabbe and Goyle", "Al and Slaney"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 1
+  },
+  {
+    "question": "24. Where does Dumbledore’s Army meet in ‘Harry Potter and the Order of the Phoenix’?",
+    "img": "",
+    "answers": ["The Room of Requirement", "The Gryffindor Common Room", "Hagrid’s House", "The Shrieking Shack"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 1
+  },
+  {
+    "question": "25. How do you summon a Patronus?",
+    "img": "",
+    "answers": ["Patronia Paternus", "Expelliarmus Patronicha", "Expecto Patronum", "Accio Patronus"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 1
+  }
+]

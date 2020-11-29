@@ -3,17 +3,29 @@ var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cors = require("cors");
+var mysql = require('mysql');
 
 var testAPIRouter = require("./routes/testAPI");
-var quest = require("./quesitons/got.json");
+var quest = require("./quesitons/harry.json");
 
 var app = express();
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
 
 var game = [];
-var users = [];
 var questions = quest
+
+var con = mysql.createConnection({
+   host: "localhost",
+   user: "kashoot",
+   password: "kashoot",
+   database : "kashoot"
+});
+
+con.connect(function(err) {
+   if (err) throw err;
+   console.log("Connected!");
+});
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -26,70 +38,106 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", testAPIRouter);
 
-const mergeArrayWithObject = (arr, obj) => arr && arr.map(t => t.id === obj.id ? obj : t);
+async function updateUser(score, answer, room, name, lobby) {
+   let results = await con.query("UPDATE kashoot.lobby SET score = '"+score+"', answer = '"+answer+"' WHERE lobby.roomcode = '"+room+"' AND lobby.username = '"+name+"';")
+   lobby.answered += 1;
+   return results
+}
+
+async function resetUsers(room) {
+   let results = await con.query("UPDATE kashoot.lobby SET answer = 0 WHERE lobby.roomcode = '"+room+"';")
+   return results
+}
+
 
 io.on('connection', function(socket){
    socket.on('join', ({name, room}) => {
-      console.log(name, "joining", room)
       let temp1 = room
       let lobby = game.find( ({ room }) => room == temp1 )
-      let temp = name
-      try {
-         if (lobby.score.find( ({ name }) => name === temp )) {
-            let message = "Name Taken"
+      if (lobby) {
+         console.log(name, "Joining", room)
+         try {
+            con.query("SELECT * FROM kashoot.lobby WHERE lobby.username = '"+ name +"' AND lobby.roomcode = '"+ room +"';", function( error, results) {
+               if (error) console.log("ERROR:",error);
+               if (results[0]) {
+                  console.log(name, "Exists in Room", room)
+                  let message = "Name Taken"
+                  socket.emit('issue', {message})
+               } else {
+                  console.log(name, "Joined", room)
+                  con.query("INSERT INTO kashoot.lobby (`roomcode`, `username`) VALUES ('"+room+"', '"+name+"');", function (error, results) {
+                     if (error) console.log("ERROR:",error);
+                  });
+                  socket.join(room)
+                  io.to(room).emit('players', {name})
+                  lobby.players += 1
+               }
+            });
+         } catch (e) {
+            console.log(name, "Failed To Join", room)
+            let message = "Error Joining Game"
             socket.emit('issue', {message})
-         } else {
-            socket.join(room)
-            io.to(room).emit('players', {name})
-            lobby.score.push({name: name, score:0, correct:0})
-            users.push({name: name, socket:socket, room: room})
          }
-      } catch (e) {
-         let message = "Room Does Not Exist"
+      } else {
+         let message = "Room Not Found"
          socket.emit('issue', {message})
       }
    })
 
    socket.on('rejoin', ({name, room}) => {
-      try {
-         console.log(name, 'Reconnected')
-         socket.join(room)
-         let temp = name
-         let user = users.find(({name}) => name === temp)
-         user.socket = socket
-      } catch (e) {
-         let message = "Issue Reconnecting to Game"
+      let temp1 = room
+      let lobby = game.find( ({ room }) => room == temp1 )
+      if (lobby) {
+         con.query("SELECT * FROM kashoot.lobby WHERE lobby.username = '" + name + "' AND lobby.roomcode = '" + room + "';", function (error, results) {
+            if (error) console.log("ERROR:", error);
+            if (results[0]) {
+               console.log(name, "Reconnected To", room)
+               socket.join(room)
+            } else {
+               console.log(name, "Failed Reconnecting To", room)
+               let message = "Issue Reconnecting to Game"
+               socket.emit('issue', {message})
+            }
+         });
+      } else {
+         console.log(name, "Tried To Connect To Dead Room")
+         let message = "Room Is Closed"
          socket.emit('issue', {message})
       }
    })
 
    socket.on('host', () => {
-      var room = Math.floor((Math.random() * 9999) + 1);
+      var room = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000;
       console.log('Host Session Started', room)
       socket.join(room)
       io.to(room).emit('host', {room})
-      let temp = {room: room, score: [], question:0, answered:0, startRound: new Date(), lastAnswer:0 }
+      let temp = {room: room, question:0, answered:0, players:0, startRound: new Date() }
       game.push(temp)
    })
 
-   socket.on('start', () => {
-      let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
-      let room = game.find( ({ room }) => room == currentRoom )
-      room.startRound = new Date();
+   socket.on('start', ({room}) => {
+      let temp = room
+      let lobby = game.find( ({ room }) => room == temp )
+      lobby.startRound = new Date();
       try {
-         var q = questions[room.question].question;
-         if (questions[room.question].type === 2) {
-            var i = questions[room.question].img
+         var q = questions[lobby.question].question;
+         if (questions[lobby.question].type === 2) {
+            var i = questions[lobby.question].img
          } else {
             var i = ''
          }
-         var a = questions[room.question].answers;
-         var t = questions[room.question].type;
-         io.to(currentRoom).emit('hoster', {q, a, t, i});
-         io.to(currentRoom).emit('player', {q});
+         var a = questions[lobby.question].answers;
+         var t = questions[lobby.question].type;
+         io.to(room).emit('hoster', {q, a, t, i});
+         io.to(room).emit('player', {q});
       } catch (e) {
-         let score = room.score
-         io.to(currentRoom).emit('finished', {score});
+         con.query("SELECT * FROM kashoot.lobby WHERE lobby.roomcode = '"+ room +"' ORDER BY lobby.score DESC;", function( error, results) {
+            if (error) console.log("ERROR:", error);
+            if (results) {
+               let score = results
+               io.to(room).emit('finished', {score});
+            }
+         });
       }
    })
 
@@ -99,79 +147,85 @@ io.on('connection', function(socket){
       io.to(currentRoom).emit('issue', {message})
    })
 
-   socket.on('next', () => {
-      let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
-      let room = game.find( ({ room }) => room == currentRoom )
-      let score = room.score
-      let last = room.lastAnswer
-      io.to(currentRoom).emit('next', {score, last})
-      let i;
-      for (i = 0; i < score.length; i++) {
-         score[i].correct = 0;
-      }
-      room.question += 1;
-      room.answered = 0;
+   socket.on('next', ({room}) => {
+      let temp = room
+      let lobby = game.find( ({ room }) => room == temp )
+      let last = questions[lobby.question]
+      con.query("SELECT * FROM kashoot.lobby WHERE lobby.roomcode = '"+ room +"' ORDER BY lobby.score DESC;", function( error, results) {
+         if (error) console.log("ERROR:", error);
+         if (results) {
+            let score = results
+            io.to(room).emit('next', {score, last})
+         }
+      });
+      lobby.question += 1;
+      lobby.answered = 0
+      resetUsers(room).then(results => console.log("Reset Answers"))
    })
 
-   socket.on('kicks', ({name}) => {
-      console.log("Attempting to kick ", name)
-      let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
-      let room = game.find( ({ room }) => room == currentRoom )
-      let temp2 = name
-      let user2 = users.find( ({ name }) => name === temp2 )
-      let message = "You have been kicked"
-      user2.socket.emit('issue', {message})
-      var removeIndex = room.score.map(item => item.name).indexOf(name);
-      ~removeIndex && room.score.splice(removeIndex, 1);
+   socket.on('kicks', ({name, room}) => {
+      console.log("Attempting to kick ", name, "From", room)
+      let lobby = game.find( ({ room }) => room == temp1 )
+      lobby.players -= 1
+      con.query("DELETE FROM kashoot.lobby WHERE lobby.username = '"+name+"' AND lobby.roomcode = '"+room+"';", function (error, results) {
+         let message = "You have been kicked"
+         io.to(room).emit('issue', {message, name})
+      });
    })
 
-   socket.on('answer', ({name, answer}) => {
-      console.log(name, "answered", answer)
-      let currentRoom = (socket.rooms[Object.keys(socket.rooms)[0]])
-      let room = game.find( ({ room }) => room == currentRoom )
-      let endRound = new Date();
-      let seconds = 0
-      let scoreMultiplier = 0
+   socket.on('answer', ({name, answer, room}) => {
       try {
-         seconds = Math.round((endRound - room.startRound) / 1000)
-         scoreMultiplier = Math.round(((45-seconds) / 45) * 1000)
+         console.log(name, "answered", answer)
+         let temp = room
+         let lobby = game.find(({room}) => room == temp)
+         let endRound = new Date();
+         let seconds = 0
+         let scoreMultiplier = 0
+         try {
+            seconds = Math.round((endRound - lobby.startRound) / 1000)
+            scoreMultiplier = Math.round(((45 - seconds) / 45) * 1000)
+         } catch (e) {
+            scoreMultiplier = 1000
+         }
+
+         con.query("SELECT * FROM kashoot.lobby WHERE lobby.roomcode = '"+ room +"' AND lobby.username = '"+name+"';", function( error, results) {
+            if (error) console.log("ERROR:", error);
+            if (results[0]) {
+               let score = results[0].score
+               if (answer === 5) {
+                  if (questions[lobby.question].correct.includes(answer)) {
+                     score += 5 * scoreMultiplier;
+                  } else {
+                     score -= 5 * scoreMultiplier;
+                  }
+               } else {
+                  if (questions[lobby.question].correct.includes(answer)) {
+                     score += 1 * scoreMultiplier;
+                  } else if (questions[lobby.question].trick.includes(answer)) {
+                     score -= 1 * scoreMultiplier;
+                  }
+               }
+               updateUser(score, answer, room, name, lobby).then(results => {
+                  console.log("ANSWERED :",lobby.answered, "PLAYERS :", lobby.players)
+                  if (lobby.answered === lobby.players) {
+                     let last = questions[lobby.question]
+                     con.query("SELECT * FROM kashoot.lobby WHERE lobby.roomcode = '"+ room +"' ORDER BY lobby.score DESC;", function( error, results) {
+                        if (error) console.log("ERROR:", error);
+                        if (results) {
+                           let score = results
+                           io.to(room).emit('next', {score, last})
+                        }
+                     });
+                     lobby.question += 1;
+                     lobby.answered = 0;
+                     resetUsers(room).then(results => console.log("Reset Answers"))
+                  }
+               });
+            }
+         });
+
       } catch (e) {
-         scoreMultiplier = 1000
-      }
-
-      let temp = name
-      let user = room.score.find( ({ name }) => name === temp )
-      user.correct = answer;
-      room.lastAnswer = questions[room.question]
-
-      if (answer === 5) {
-         if (questions[room.question].correct.includes(answer)) {
-            user.score += 5*scoreMultiplier;
-         } else {
-            user.score -= 5*scoreMultiplier;
-         }
-      } else {
-         if (questions[room.question].correct.includes(answer)) {
-            user.score += 1*scoreMultiplier;
-         } else if (questions[room.question].trick.includes(answer)) {
-            user.score -= 1*scoreMultiplier;
-         }
-      }
-
-      mergeArrayWithObject(room.score, user)
-      room.score.sort((a, b) => b.score - a.score);
-      room.answered += 1
-
-      if (room.answered === room.score.length) {
-         let score = room.score
-         let last = room.lastAnswer
-         io.to(currentRoom).emit('next', {score, last})
-         let i;
-         for (i = 0; i < score.length; i++) {
-            score[i].correct = 0;
-         }
-         room.question += 1;
-         room.answered = 0;
+         console.log("Whoops")
       }
    })
 });
