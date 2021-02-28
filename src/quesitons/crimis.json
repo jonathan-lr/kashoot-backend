@@ -1,0 +1,170 @@
+[
+  {
+    "question": "What does Santa suffer from if he gets stuck in a chimney?",
+    "img": "",
+    "answers": ["Claus-trophobia", "Coal-burn", "Diabetes", "Depression"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "What happened to the man who stole an Advent Calendar?",
+    "img": "",
+    "answers": ["He got away with It", "He got 25 days", "He was on the naughty list", "He got 25 coals"],
+    "correct": [2],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "Who delivers presents to baby sharks at Christmas?",
+    "img": "",
+    "answers": ["Santa Claws", "Santa Paws", "Santa Jaws", "Boat Santa"],
+    "correct": [3],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "What do they sing at a snowman’s birthday party?",
+    "img": "",
+    "answers": ["Jingle Bells", "Freeze a jolly good fellow", "Happy Snow-day", "Frosty"],
+    "correct": [2],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "What do Santa’s little helpers learn at school?",
+    "img": "",
+    "answers": ["Sea Shantys", "Toys'R'Us", "Wrap-101", "The elf-abet"],
+    "correct": [4],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "Why was the turkey in the pop group?",
+    "img": "",
+    "answers": ["He was the only one with drumsticks", "The Chicken roped him into it", "Gobble Gobble", "Click me for minus points"],
+    "correct": [1],
+    "trick": [4],
+    "type": 1
+  },
+  {
+    "question": "What goes 'Oh, Oh, Oh'?",
+    "img": "",
+    "answers": ["Santa walking backwards", "One Direction", "Michel Jackson", "Stuck Santa"],
+    "correct": [1],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "Why does Santa have three gardens?",
+    "img": "",
+    "answers": ["3 is a lucky number", "He likes his crops", "Brussel market is good in the UK", "So he can 'ho ho ho'"],
+    "correct": [4],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "What is the best Christmas present in the world?",
+    "img": "",
+    "answers": ["A broken drum", "Money", "Cheese", "Family"],
+    "correct": [1,4],
+    "trick": [3],
+    "type": 1
+  },
+  {
+    "question": "What do snowmen wear on their heads?",
+    "img": "",
+    "answers": ["Snow caps", "Sun Rays", "SPF 1000", "Ice caps"],
+    "correct": [4],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "What did Adam say the day before Christmas?",
+    "img": "",
+    "answers": ["It's a New Year, Eve", "It’s Christmas, Eve", "Give me something special", "Eve dont eat the apple"],
+    "correct": [2],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "What do you get when you cross a snowman with a vampire?",
+    "img": "",
+    "answers": ["Snowcat", "Redsnow", "Snowbat", "Frostbite"],
+    "correct": [4],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "Why did no one bid for Rudolph and Blitzen on eBay?",
+    "img": "",
+    "answers": ["they were defective", "they ran out of fly power", "they were two deer", "they were old"],
+    "correct": [3],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "Why don’t you ever see Santa in hospital?",
+    "img": "",
+    "answers": ["Private elf care", "Elf Aid", "Emergancy elf rescue", "The cake is a lie"],
+    "correct": [1],
+    "trick": [4],
+    "type": 1
+  },
+  {
+    "question": "Why is it getting harder to buy Advent calendars?",
+    "img": "",
+    "answers": ["Their days are numbered", "There are only 25 left", "Its Christmas", "Cheese Gromit"],
+    "correct": [1],
+    "trick": [4],
+    "type": 1
+  },
+  {
+    "question": "How did Scrooge win the football game?",
+    "img": "",
+    "answers": ["He paid off the opposition", "The ghost of Christmas passed", "He cheated", "He went back in time"],
+    "correct": [2],
+    "trick": [0],
+    "type": 1
+  },
+  {
+    "question": "Why did Santa’s helper see the doctor?",
+    "img": "",
+    "answers": ["He hurt his knee", "He chopped his hands off in the saw mill", "He had a low elf esteem", "He was sad"],
+    "correct": [3],
+    "trick": [2],
+    "type": 1
+  },
+  {
+    "question": "Who hides in the bakery at Christmas?",
+    "img": "",
+    "answers": ["A mince pie", "A mince spy", "A gingerbread man", "A mice spy"],
+    "correct": [2],
+    "trick": [1],
+    "type": 1
+  },
+  {
+    "question": "How do snowmen get around",
+    "img": "",
+    "answers": ["Snort the white powder", "Ride a broom", "Fly with scarf", "They ride an icicle"],
+    "correct": [4],
+    "trick": [1],
+    "type": 1
+  },
+  {
+    "question": "What’s the most popular Christmas wine?",
+    "img": "",
+    "answers": ["Red", "White", "But I don’t like Brussels sprouts", "Bubbly"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 1
+  },
+  {
+    "question": "What do reindeer hang on their Christmas trees?",
+    "img": "",
+    "answers": ["Red Boubles", "Jingle bells", "Ornaments", "Horn-aments"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 1
+  }
+]

@@ -1,0 +1,245 @@
+[
+  {
+    "question": "Which country has the highest number of internet users? [December 2019]",
+    "img": "https://i.imgur.com/PJ79wPV.png",
+    "answers": ["China", "United States", "India", "Indonesia"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": "China has 854 million internet users!"
+  },
+  {
+    "question": "What was the most consumed vegetable oil worldwide? [2020/2021]",
+    "img": "https://i.imgur.com/0bGBRLA.png",
+    "answers": ["Soybean oil", "Sunflower seed oil", "Palm oil", "Peanut oil"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which country had the highest share of users attacked by ransomware? [2017/2018]",
+    "img": "https://i.imgur.com/2Wv3tLq.png",
+    "answers": ["United Arab Emirates", "Thailand", "Iran", "Bangladesh"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which country has the most cyber bullying? [December 2019]",
+    "img": "https://i.imgur.com/pWCyzxd.png",
+    "answers": ["India", "United States", "France", "Australia"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "WhatsApp has 2,000 million users what chat app has 1,300 million users worldwide? [January 2021]",
+    "img": "https://i.imgur.com/j45EFRb.png",
+    "answers": ["Snapchat", "WhatsApp", "WeChat", "Messenger"],
+    "correct": [4],
+    "trick": [2],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which region has the most social media users in 2020?",
+    "img": "https://i.imgur.com/FEzK7fX.png",
+    "answers": ["Southeast Asia", "Eastern Asia", "Northern America", "Central & Western Europe"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which country spent the most on Quinoa in 2018?",
+    "img": "https://i.imgur.com/ksZOVaG.png",
+    "answers": ["Bolivia", "Peru", "United States", "United Kingdom"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which country had the highest number of mobile app downloads in 2018?",
+    "img": "https://i.imgur.com/YfOmLah.png",
+    "answers": ["China", "India", "United States", "Brazil"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Preferred payment methods of online shoppers worldwide? [March 2017]",
+    "img": "https://i.imgur.com/XoC8sMa.png",
+    "answers": ["Gift Cards", "Credit Cards", "PayPal", "Debit Cards"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2,
+    "alert": "PayPal is 3% behind credit cards!"
+  },
+  {
+    "question": "By what percentage difference is Googles monopoly as a search engine worldwide? [Jan 2021]",
+    "img": "https://i.imgur.com/UCmhspV.png",
+    "answers": ["64.24%", "32.53%", "79.02%", "12.36%"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2,
+    "alert": "All questions will have minus points from now :)"
+  },
+  {
+    "question": "What country provides roughly 25% of all overseas nurses worldwide? [2017]",
+    "img": "https://i.imgur.com/g5WEb2j.png",
+    "answers": ["Canada", "Spain", "Poland", "Philippines"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "What country first brought Tea to the UK isles?",
+    "img": "https://i.imgur.com/eHvZLYg.png",
+    "answers": ["Portugal", "Dutch", "India", "France"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "What country imprisons its citizens for not having one of 15 state approved haircuts?",
+    "img": "https://i.imgur.com/duUhrGJ.png",
+    "answers": ["Algeria", "North Korea", "Cuba", "Syria"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which country has the highest rape rates? [2021]",
+    "img": "https://i.imgur.com/4nfpEtQ.png",
+    "answers": ["South Africa", "Botswana", "Lesotho", "Swaziland"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": "You are 35x more likely to get raped in South Africa than the next highest country!"
+  },
+  {
+    "question": "Which country drinks the most alcohol? [liters per capita, 2021]",
+    "img": "https://i.imgur.com/EKpBAi5.png",
+    "answers": ["Tunisia", "Maldives", "Scotland", "Russia"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which country is ranked happiest? [2020]",
+    "img": "https://i.imgur.com/6VDNkRd.png",
+    "answers": ["Denmark", "New Zealand", "Finland", "Switzerland"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 2,
+    "alert": "When I searched happy a fuck ton of minions showed up!"
+  },
+  {
+    "question": "Which country is ranked unhappiest? [2020]",
+    "img": "https://i.imgur.com/AhIryYl.png",
+    "answers": ["Rwanda", "Zimbabwe", "South Sudan", "Afghanistan"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which Country is the most densely populated? [2019]",
+    "img": "https://i.imgur.com/5CmpFyp.png",
+    "answers": ["Singapore", "Monaco", "Bahrain", "Malta"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which Country is the most literate in the world? [2021]",
+    "img": "https://i.imgur.com/hONCdoA.png",
+    "answers": ["Canada", "Japan", "Korea", "UK"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which Country has the highest ranked GDP? [2021]",
+    "img": "https://i.imgur.com/fblfGsV.png",
+    "answers": ["Japan", "China", "United States", "Germany"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which Country has the most debt to GDP? [2021]",
+    "img": "https://i.imgur.com/fblfGsV.png",
+    "answers": ["Italy", "Greece", "Portugal", "Japan"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which Country has the highest abortion rate? [2021]",
+    "img": "https://i.imgur.com/driY2o1.png",
+    "answers": ["Russia", "Vietnam", "Kazakhstan", "Estonia"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which country has the highest birth rate? [2021]",
+    "img": "https://i.imgur.com/PdFZwem.png",
+    "answers": ["Angola", "Mali", "Niger", "Uganda"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which Country drinks the most milk? [2021]",
+    "img": "https://i.imgur.com/dXWsMBD.png",
+    "answers": ["Finland", "Montenegro", "Netherlands", "Sweden"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "What is the most corrupt countries according to CPI? [2021]",
+    "img": "https://i.imgur.com/66YZStT.png",
+    "answers": ["South Sudan", "Somalia", "Syria", "Yemen"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "What is the most un-corrupt countries according to CPI? [2021]",
+    "img": "https://i.imgur.com/u3G9cnC.png",
+    "answers": ["New Zealand", "Denmark", "Finland", "Switzerland"],
+    "correct": [1,2],
+    "trick": [3,4],
+    "type": 2,
+    "alert": "Final question make sure to get those points in!"
+  },
+  {
+    "question": "Which country has the most covid Deaths? [2021]",
+    "img": "https://i.imgur.com/jFealkP.png",
+    "answers": ["India", "Probably China", "Brazil", "United States"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 2,
+    "alert": "India has 4x the population of the US but half as many deaths."
+  }
+]

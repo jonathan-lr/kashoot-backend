@@ -1,26 +1,29 @@
 [
   {
     "question": "QUESTION TEXT",
-    "img": "https://i.imgur.com/LQNNRck.png",
+    "img": "https://knowpathology.com.au/app/uploads/2018/07/Happy-Test-Screen-01.png",
     "answers": ["INCORRECT", "ANSWER", "INCORRECT", "ANSWER"],
     "correct": [2,4],
     "trick": [0],
-    "type": 2
+    "type": 2,
+    "alert": ""
   },
   {
     "question": "QUESTION TEXT",
-    "img": "",
+    "img": "https://knowpathology.com.au/app/uploads/2018/07/Happy-Test-Screen-01.png",
     "answers": ["MINUS POINTS", "INCORRECT", "ANSWER", "WRONG"],
     "correct": [3],
     "trick": [1],
-    "type": 1
+    "type": 2,
+    "alert": "ALL QUESTIONS FROM NOW ON WILL BE MINUS POINTS"
   },
   {
     "question": "TRICK QUESTION",
-    "img": "",
+    "img": "https://knowpathology.com.au/app/uploads/2018/07/Happy-Test-Screen-01.png",
     "answers": ["MINUS POINTS", "MINUS POINTS", "MINUS POINTS", "MINUS POINTS"],
     "correct": [5],
     "trick": [1,2,3,4],
-    "type": 1
+    "type": 2,
+    "alert": ""
   }
 ]

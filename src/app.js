@@ -6,7 +6,7 @@ var cors = require("cors");
 var mysql = require('mysql');
 
 var testAPIRouter = require("./routes/testAPI");
-var quest = require("./quesitons/harry.json");
+var quest = require("./quesitons/food.json");
 
 var app = express();
 var http = require("http").createServer(app);
@@ -38,8 +38,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", testAPIRouter);
 
-async function updateUser(score, answer, room, name, lobby) {
-   let results = await con.query("UPDATE kashoot.lobby SET score = '"+score+"', answer = '"+answer+"' WHERE lobby.roomcode = '"+room+"' AND lobby.username = '"+name+"';")
+async function updateUser(score, pScore, cScore, answer, room, name, lobby) {
+   let results = await con.query("UPDATE kashoot.lobby SET score = '"+score+"', answer = '"+answer+"', pScore = '"+pScore+"', cScore = '"+cScore+"' WHERE lobby.roomcode = '"+room+"' AND lobby.username = '"+name+"';")
    lobby.answered += 1;
    return results
 }
@@ -128,7 +128,8 @@ io.on('connection', function(socket){
          }
          var a = questions[lobby.question].answers;
          var t = questions[lobby.question].type;
-         io.to(room).emit('hoster', {q, a, t, i});
+         var w = questions[lobby.question].alert;
+         io.to(room).emit('hoster', {q, a, t, i, w});
          io.to(room).emit('player', {q});
       } catch (e) {
          con.query("SELECT * FROM kashoot.lobby WHERE lobby.roomcode = '"+ room +"' ORDER BY lobby.score DESC;", function( error, results) {
@@ -151,7 +152,7 @@ io.on('connection', function(socket){
       let temp = room
       let lobby = game.find( ({ room }) => room == temp )
       let last = questions[lobby.question]
-      con.query("SELECT * FROM kashoot.lobby WHERE lobby.roomcode = '"+ room +"' ORDER BY lobby.score DESC;", function( error, results) {
+      con.query("SELECT * FROM kashoot.lobby WHERE lobby.roomcode = '"+ room +"' ORDER BY lobby.pScore DESC;", function( error, results) {
          if (error) console.log("ERROR:", error);
          if (results) {
             let score = results
@@ -160,11 +161,12 @@ io.on('connection', function(socket){
       });
       lobby.question += 1;
       lobby.answered = 0
-      resetUsers(room).then(results => console.log("Reset Answers"))
+      resetUsers(room).then()
    })
 
    socket.on('kicks', ({name, room}) => {
       console.log("Attempting to kick ", name, "From", room)
+      let temp1 = room
       let lobby = game.find( ({ room }) => room == temp1 )
       lobby.players -= 1
       con.query("DELETE FROM kashoot.lobby WHERE lobby.username = '"+name+"' AND lobby.roomcode = '"+room+"';", function (error, results) {
@@ -192,6 +194,7 @@ io.on('connection', function(socket){
             if (error) console.log("ERROR:", error);
             if (results[0]) {
                let score = results[0].score
+               let pScore = results[0].score
                if (answer === 5) {
                   if (questions[lobby.question].correct.includes(answer)) {
                      score += 5 * scoreMultiplier;
@@ -205,7 +208,8 @@ io.on('connection', function(socket){
                      score -= 1 * scoreMultiplier;
                   }
                }
-               updateUser(score, answer, room, name, lobby).then(results => {
+               let cScore = score - pScore;
+               updateUser(score, pScore, cScore, answer, room, name, lobby).then(results => {
                   console.log("ANSWERED :",lobby.answered, "PLAYERS :", lobby.players)
                   if (lobby.answered === lobby.players) {
                      let last = questions[lobby.question]
@@ -218,7 +222,7 @@ io.on('connection', function(socket){
                      });
                      lobby.question += 1;
                      lobby.answered = 0;
-                     resetUsers(room).then(results => console.log("Reset Answers"))
+                     resetUsers(room).then()
                   }
                });
             }
