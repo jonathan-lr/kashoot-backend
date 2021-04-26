@@ -2,11 +2,11 @@
   {
     "question": "QUESTION TEXT",
     "img": "https://knowpathology.com.au/app/uploads/2018/07/Happy-Test-Screen-01.png",
-    "answers": ["INCORRECT", "ANSWER", "INCORRECT", "ANSWER"],
+    "answers": ["TEST RELY LONG ANSWER YES YES YES YES YES  YES YES YES YES YES", "ANSWER", "INCORRECT", "ANSWER"],
     "correct": [2,4],
     "trick": [0],
     "type": 2,
-    "alert": ""
+    "alert": "ALL QUESTIONS FROM NOW ON WILL BE MINUS POINTS"
   },
   {
     "question": "QUESTION TEXT",
@@ -24,6 +24,6 @@
     "correct": [5],
     "trick": [1,2,3,4],
     "type": 2,
-    "alert": ""
+    "alert": "ALL QUESTIONS FROM NOW ON WILL BE MINUS POINTS"
   }
 ]

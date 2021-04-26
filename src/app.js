@@ -6,7 +6,7 @@ var cors = require("cors");
 var mysql = require('mysql');
 
 var testAPIRouter = require("./routes/testAPI");
-var quest = require("./quesitons/food.json");
+var quest = require("./quesitons/pirate.json");
 
 var app = express();
 var http = require("http").createServer(app);
@@ -38,8 +38,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", testAPIRouter);
 
-async function updateUser(score, pScore, cScore, answer, room, name, lobby) {
-   let results = await con.query("UPDATE kashoot.lobby SET score = '"+score+"', answer = '"+answer+"', pScore = '"+pScore+"', cScore = '"+cScore+"' WHERE lobby.roomcode = '"+room+"' AND lobby.username = '"+name+"';")
+async function updateUser(score, pScore, cScore, answer, room, name, lobby, streak, correct, first, last, minus, wrong) {
+   let results = await con.query("UPDATE kashoot.lobby SET score = '"+score+"', answer = '"+answer+"', pScore = '"+pScore+"', cScore = '"+cScore+"', streak = '"+streak+"', correct = '"+correct+"', firstN = '"+first+"', lastN = '"+last+"', minus = '"+minus+"', wrong = '"+wrong+"' WHERE lobby.roomcode = '"+room+"' AND lobby.username = '"+name+"';")
    lobby.answered += 1;
    return results
 }
@@ -121,7 +121,7 @@ io.on('connection', function(socket){
       lobby.startRound = new Date();
       try {
          var q = questions[lobby.question].question;
-         if (questions[lobby.question].type === 2) {
+         if (questions[lobby.question].type === 2 || questions[lobby.question].type === 3) {
             var i = questions[lobby.question].img
          } else {
             var i = ''
@@ -152,7 +152,7 @@ io.on('connection', function(socket){
       let temp = room
       let lobby = game.find( ({ room }) => room == temp )
       let last = questions[lobby.question]
-      con.query("SELECT * FROM kashoot.lobby WHERE lobby.roomcode = '"+ room +"' ORDER BY lobby.pScore DESC;", function( error, results) {
+      con.query("SELECT * FROM kashoot.lobby WHERE lobby.roomcode = '"+ room +"' ORDER BY lobby.score DESC;", function( error, results) {
          if (error) console.log("ERROR:", error);
          if (results) {
             let score = results
@@ -195,21 +195,46 @@ io.on('connection', function(socket){
             if (results[0]) {
                let score = results[0].score
                let pScore = results[0].score
+               let streak = results[0].streak
+               let correct = results[0].correct
+               let first = results[0].firstN
+               let last = results[0].lastN
+               let minus = results[0].minus
+               let wrong = results[0].wrong
+               if (lobby.answered === 0) {
+                  first += 1
+               }
+               if (lobby.answered === (lobby.players - 1)) {
+                  last += 1
+               }
                if (answer === 5) {
                   if (questions[lobby.question].correct.includes(answer)) {
-                     score += 5 * scoreMultiplier;
+                     score += 5000;
+                     correct += 1
+                     streak += 1
                   } else {
-                     score -= 5 * scoreMultiplier;
+                     score -= 3000;
+                     streak = 0;
+                     minus += 3000;
+                     wrong += 1;
                   }
                } else {
                   if (questions[lobby.question].correct.includes(answer)) {
                      score += 1 * scoreMultiplier;
+                     correct += 1
+                     streak += 1
                   } else if (questions[lobby.question].trick.includes(answer)) {
-                     score -= 1 * scoreMultiplier;
+                     score -= 1000;
+                     streak = 0
+                     minus += 1000;
+                     wrong += 1;
+                  } else {
+                     streak = 0
+                     wrong += 1;
                   }
                }
                let cScore = score - pScore;
-               updateUser(score, pScore, cScore, answer, room, name, lobby).then(results => {
+               updateUser(score, pScore, cScore, answer, room, name, lobby, streak, correct, first, last, minus, wrong).then(results => {
                   console.log("ANSWERED :",lobby.answered, "PLAYERS :", lobby.players)
                   if (lobby.answered === lobby.players) {
                      let last = questions[lobby.question]

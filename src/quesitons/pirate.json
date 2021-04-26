@@ -1,0 +1,263 @@
+[
+  {
+    "question": "Which famous pirate was the first ship commander to successfully circumnavigate the world?",
+    "img": "https://i.imgur.com/K0fZbm3.png",
+    "answers": ["Black Bart", "Blackbeard", "Henry Morgan", "Francis Drake"],
+    "correct": [4],
+    "trick": [0],
+    "type": 2,
+    "alert": "Drake, who was later knighted by the queen, successfully sailed his ship The Golden Hind around the world in 1580 after a series of profitable plunders on the Spanish Main."
+  },
+  {
+    "question": "What name did pirates give to ships they successfully managed to sack?",
+    "img": "https://i.imgur.com/bkgOxw3.png",
+    "answers": ["Prize", "Gift", "Gam", "Tack"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": "A gam is a whaling term that means a friendly meeting between two ships at sea."
+  },
+  {
+    "question": "The modern dollar sign '$' is derived from symbols that appeared on which infamous manner of pirate currency?",
+    "img": "https://i.imgur.com/2PbjwF4.png",
+    "answers": ["Doubloons", "Ducats", "Escudos", "Pieces of eight"],
+    "correct": [4],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which of the following types of pirate was officially licensed by a sovereign nation to raid and seize goods carried by the ships of \"hostile\" nations?",
+    "img": "https://i.imgur.com/nCMeQSS.png",
+    "answers": ["Buccaneer", "Privateer", "Corsair", "Buckaroo"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "What is the contemporary name for the Caribbean island 16th-Century pirates referred to as Hispaniola?",
+    "img": "https://i.imgur.com/8dVXNUE.png",
+    "answers": ["Jamaica", "Cuba", "Haiti", "Puerto Rico"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Along which coast did the Barbary pirates operate?",
+    "img": "https://i.imgur.com/hxT1KJf.png",
+    "answers": ["Along the Horn of Africa near Somalia and Kenya", "Along the North African coast between the cities of Algiers and Tunis", "Along the Skeleton Coast of Namibia", "Along the Caribbean"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "In the spring of 1718, Blackbeard sailed a pirate flotilla of four vessels with more than 60 guns and as many as 400 fellow pirates. Which town did he blockade?",
+    "img": "https://i.imgur.com/8pkcr0w.png",
+    "answers": ["Annapolis, Maryland", "Charleston, South Carolina", "New York", "Cape Canaveral"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "How does Captain Jack Sparrow propose to get the black pearl out of the bottle?",
+    "img": "https://data.whicdn.com/images/307353841/original.gif",
+    "answers": ["Crossbow", "Hourglass", "3 Goats", "1 of us needs to play the trumpet"],
+    "correct": [5],
+    "trick": [0],
+    "type": 2,
+    "alert": "All 4 of these were needed. However its fake!"
+  },
+  {
+    "question": "What is Edward Teach's Pirate name?",
+    "img": "https://i.imgur.com/F2inPHU.png",
+    "answers": ["Black Bart", "Black Bellamy", "Blackbeard", "Captain Kidd"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Pirates believed that pierced ears would improve their...",
+    "img": "https://i.imgur.com/cMzAzBm.png",
+    "answers": ["Eyesight", "Bravery", "Fortune", "Leadership"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which Welshman became notorious as a pirate leader after conquering and looting the Spanish Panamanian strongholds of Portobello and Santiago Castle?",
+    "img": "https://i.imgur.com/Qx7WwD9.jpg",
+    "answers": ["Henry Morgan", "Joseph Baccardi", "William Kidd", "Hector Barbossa"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which of these is NOT a type of ship a pirate would have used?",
+    "img": "https://i.imgur.com/ZJ1rY8m.png",
+    "answers": ["Brig", "Bilge", "Brigantine", "Bilander"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "The \"Golden Age of Piracy\" is considered to have occurred during which years?",
+    "img": "https://i.imgur.com/gJDynbN.png",
+    "answers": ["Between 1100 and 1400", "Between 1820 and 1940", "Between 1650 and 1720", "Between 1350 and 1380"],
+    "correct": [3],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "The most successful pirate during the golden age of Piracy was Bartholomew Roberts, he was also known as ...",
+    "img": "https://i.imgur.com/aOu5nJZ.png",
+    "answers": ["Black Bart", "Bogey Bart", "Robbie the Robber", "The Dread Pirate Roberts"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Black Bart is said to have captured how many vessels.",
+    "img": "https://i.imgur.com/iqXc30b.png",
+    "answers": ["0-150", "151-300", "301-450", "over 451"],
+    "correct": [4],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "The Whydah Galley was a pirate ship discovered in 1984. Where was it found?",
+    "img": "https://i.imgur.com/ecfRhBM.png",
+    "answers": ["Cape Cod, United States", "Port Royal, Jamaica", "Gulf of Saint Lawrence, Canada", "Miami Beach, United States"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "In the War of the Spanish Succession how many letters of marque were issued by the English?",
+    "img": "https://i.imgur.com/qugfWgH.png",
+    "answers": ["1522", "1622", "1722", "1822"],
+    "correct": [2],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Penzance, England experienced occasional pirate raids in the 17th century and became the inspiration for the Gilbert and Sullivan operetta, The Pirates of Penzance. In which county is Penzance located?",
+    "img": "https://i.imgur.com/HX4tKu5.png",
+    "answers": ["Cornwall", "Dorset", "Isle of Wight", "Briton"],
+    "correct": [1],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "In 2005, Cruise ship Seabourn Spirit was attacked by pirates off the coast of which African Country?",
+    "img": "https://i.imgur.com/VBOD0y3.jpg",
+    "answers": ["Mozambique", "South Africa", "Ethiopia", "Somalia"],
+    "correct": [4],
+    "trick": [0],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "One of Blackbeard's favorite hiding places along the Carolina coast was this remote barrier island. What is the name of the island, where Blackbeard later met his death?",
+    "img": "https://i.imgur.com/V1uBRkO.png",
+    "answers": ["Ronanoke Island", "Ocracoke Island", "Portsmouth Island", "Cheddar Island"],
+    "correct": [2],
+    "trick": [4],
+    "type": 2,
+    "alert": "Im not going to reward you for being stupid!"
+  },
+  {
+    "question": "Calico Jack Rackham was captured in 1720 and tried and convicted of piracy in the town of St. Jago de la Vega on which island in the Caribbean?",
+    "img": "https://i.imgur.com/SuXv4Lt.png",
+    "answers": ["Jamaica", "Puerto Rico", "Guadeloupe", "Bahamas"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": "Oh Sorry, Did I forget to say minus points :)"
+  },
+  {
+    "question": "What did Blackbeard put in his beard to scare the sailors on ships he boarded?",
+    "img": "https://i.imgur.com/uQOHkAO.png",
+    "answers": ["Black dye", "Daggers", "Burning Ropes", "Rats"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Name the other half of this famous pirate duo, Anne Bonny and...",
+    "img": "https://i.imgur.com/7X13CRO.png",
+    "answers": ["Mary Read", "Charlotte de Berry", "Elizabeth Swann", "Grace O'Malley"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which of these pirates was known as a fancy dresser?",
+    "img": "https://i.imgur.com/bBEXRLJ.png",
+    "answers": ["Mary Read", "Black Bart", "Thomas Tew", "Edward Low"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "What was the name of Sam Bellamy's last ship, which was a captured slave ship?",
+    "img": "https://i.imgur.com/0J3qhqY.png",
+    "answers": ["Whydah Galley", "Queen Anne's Revenge", "The Golden Hind", "The Swallow"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "What is the 'One Piece'?",
+    "img": "https://i.imgur.com/hZTZqzC.jpg",
+    "answers": ["Gol D. Roger's Treasure", "The Fastest Pirate Ship", "A Giant Blood Diamond", "Black Beard's Wheel"],
+    "correct": [5],
+    "trick": [1,2,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which pirate captured the most treasure?",
+    "img": "https://i.imgur.com/rNZnUzj.jpg",
+    "answers": ["Black Bart", "Henry Morgan", "Henry Avery", "Its a tie"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "What did most pirates do with their treasure?",
+    "img": "https://i.imgur.com/o9oRzMp.png",
+    "answers": ["Bury it", "Spend it", "Put it in a bank", "Give it to the poor"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 2,
+    "alert": ""
+  },
+  {
+    "question": "Which of the following was not a standard pirate punishment?",
+    "img": "https://www.seaofthieves.com/forum/imagechecker?src=https://i.imgur.com/TdSqU73.gif",
+    "answers": ["Walking the plank", "Marooning", "Flogging", "Keelhauling"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 2,
+    "alert": ""
+  }
+]

@@ -1,0 +1,228 @@
+[
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/1-1.mp4","http://www.kashoot.co.uk/static/videos/1-2.mp4"],
+    "answers": ["Double Knockout", "They Hug", "Right one goes down", "Left one goes down"],
+    "correct": [1],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/2-1.mp4","http://www.kashoot.co.uk/static/videos/2-2.mp4"],
+    "answers": ["She falls in the water lol", "Sailor falls in", "The float sinks", "Boat crashes"],
+    "correct": [2],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/3-1.mp4","http://www.kashoot.co.uk/static/videos/3-2.mp4"],
+    "answers": ["His ball goes in without touching the other ball", "His ball knocks the other ball in", "His ball knocks the other one then goes in", "It misses lol"],
+    "correct": [3],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/4-1.mp4","http://www.kashoot.co.uk/static/videos/4-2.mp4"],
+    "answers": ["She hits the knight", "She misses", "Melon face", "Elastic snaps"],
+    "correct": [3],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/5-1.mp4","http://www.kashoot.co.uk/static/videos/5-2.mp4"],
+    "answers": ["He catches a fish", "Gets attacked by a fish", "Gets arrested", "Gets beheaded"],
+    "correct": [3,4],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/6-1.mp4","http://www.kashoot.co.uk/static/videos/6-2.mp4"],
+    "answers": ["Man gets stabbed", "He orders the chicken burger", "Police storm the donalds", "Man gets chocked"],
+    "correct": [2],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/7-1.mp4","http://www.kashoot.co.uk/static/videos/7-2.mp4"],
+    "answers": ["Clown Truck", "Truck gets hit by train", "Truck flips over", "Truck rams police"],
+    "correct": [1],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/8-1.mp4","http://www.kashoot.co.uk/static/videos/8-2.mp4"],
+    "answers": ["Man dead in pool", "Man dancing next to pool", "Man dancing in biker helmet in pool", "Man passed out on pool floater"],
+    "correct": [3],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/9-1.mp4","http://www.kashoot.co.uk/static/videos/9-2.mp4"],
+    "answers": ["He gives them money and drives off", "His wallet gets stolen", "His bike gets stolen", "His phone gets stolen"],
+    "correct": [2,3,4],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/10-1.mp4","http://www.kashoot.co.uk/static/videos/10-2.mp4"],
+    "answers": ["She goes for a swim", "The seal jumps up", "A random guys looses his glasses", "The seal plays with a ball"],
+    "correct": [1],
+    "trick": [0],
+    "type": 3,
+    "alert": "Minus points will be applied at question 15 today :)"
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/11-1.mp4","http://www.kashoot.co.uk/static/videos/11-2.mp4"],
+    "answers": ["He gets pied by a colleague", "Attacked by a duck", "Attacked by a goose", "He gets water dumped on him"],
+    "correct": [3],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/12-1.mp4","http://www.kashoot.co.uk/static/videos/12-2.mp4"],
+    "answers": ["Falls back safely", "Falls back and gets dropped", "Falls back and they both fall", "Falls forward"],
+    "correct": [4],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/13-1.mp4","http://www.kashoot.co.uk/static/videos/13-2.mp4"],
+    "answers": ["Nothing happened keeps going", "Gets hit by a car and bleeds out", "Gets crushed by a car", "Sun bathes for a bit"],
+    "correct": [1],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/14-1.mp4","http://www.kashoot.co.uk/static/videos/14-2.mp4"],
+    "answers": ["Perfect hit", "Bonk", "Smacks him round the back of the head", "Drops the bat"],
+    "correct": [2],
+    "trick": [0],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/15-1.mp4","http://www.kashoot.co.uk/static/videos/15-2.mp4"],
+    "answers": ["Fight", "Dance off", "Dance together", "Heart attack"],
+    "correct": [3],
+    "trick": [0],
+    "type": 3,
+    "alert": "All Wrong Answers From Now On Will Be Minus - Watch Out!"
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/16-1.mp4","http://www.kashoot.co.uk/static/videos/16-2.mp4"],
+    "answers": ["Car flies", "Car duplicates", "Car enters infinite gear", "Car explodes"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/17-1.mp4","http://www.kashoot.co.uk/static/videos/17-2.mp4"],
+    "answers": ["The squirrel goes home", "Squirrel goes back to man", "Cat grabs squirrel", "Squirrel brings nut to man"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What inside the final box next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/18-1.mp4","http://www.kashoot.co.uk/static/videos/18-2.mp4"],
+    "answers": ["Rocks", "Sand", "Confetti", "Ok Sign"],
+    "correct": [4],
+    "trick": [1,2,3],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/19-1.mp4","http://www.kashoot.co.uk/static/videos/19-2.mp4"],
+    "answers": ["Lights turn off", "We go for a ride", "Hi turns into iron man", "Hulk smashes through wall"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/20-1.mp4","http://www.kashoot.co.uk/static/videos/20-2.mp4"],
+    "answers": ["Hits man on head", "Hits apple", "Dog catches arrow", "Arrow misses"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/21-1.mp4","http://www.kashoot.co.uk/static/videos/21-2.mp4"],
+    "answers": ["Max strength", "Wimpy Hit", "Hits guy", "Misses bag"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/22-1.mp4","http://www.kashoot.co.uk/static/videos/22-2.mp4"],
+    "answers": ["Strike", "Gutter Ball", "One Pin Left", "Only Hits One"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/23-1.mp4","http://www.kashoot.co.uk/static/videos/23-2.mp4"],
+    "answers": ["Nothing", "It flips over", "Rolls on side", "Digs up ground"],
+    "correct": [1],
+    "trick": [2,3,4],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/24-1.mp4","http://www.kashoot.co.uk/static/videos/24-2.mp4"],
+    "answers": ["Wins while kneeling", "Looses while kneeling", "Runs full court and hits overhead backwards to win", "Runs full court and misses ball"],
+    "correct": [3],
+    "trick": [1,2,4],
+    "type": 3,
+    "alert": ""
+  },
+  {
+    "question": "What happens next?",
+    "img": ["http://www.kashoot.co.uk/static/videos/25-1.mp4","http://www.kashoot.co.uk/static/videos/25-2.mp4"],
+    "answers": ["They do an amazing combo and win", "The team uses the captains face to win", "They loose lol", "They draw"],
+    "correct": [2],
+    "trick": [1,3,4],
+    "type": 3,
+    "alert": ""
+  }
+]
+
